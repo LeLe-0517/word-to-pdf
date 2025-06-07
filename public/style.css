@@ -1,0 +1,260 @@
+:root {
+  --primary: #3498db;
+  --success: #2ecc71;
+  --danger: #e74c3c;
+  --warning: #f39c12;
+  --dark: #2c3e50;
+  --light: #ecf0f1;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', 'Microsoft YaHei', sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+header {
+  background: linear-gradient(120deg, #3498db, #2c3e50);
+  color: white;
+  text-align: center;
+  padding: 30px 20px;
+}
+
+header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.converter-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 30px;
+  gap: 25px;
+}
+
+.converter {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+  padding: 25px;
+  width: 350px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.converter:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.converter h2 {
+  display: flex;
+  align-items: center;
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  color: var(--dark);
+  padding-bottom: 15px;
+  border-bottom: 2px solid var(--light);
+}
+
+.icon {
+  display: inline-block;
+  width: 36px;
+  height: 36px;
+  margin-right: 10px;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.icon.word {
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path fill="%232c3e50" d="M224 136V0H24C10.7 0 0 10.7 0 24v464c0 13.3 10.7 24 24 24h336c13.3 0 24-10.7 24-24V160H248c-13.2 0-24-10.8-24-24zm57.1 120H305c7.7 0 13.4 7.1 11.7 14.7l-38 168c-1.2 5.5-6.1 9.3-11.7 9.3h-38c-5.5 0-10.3-3.8-11.6-9.1-25.8-103.5-20.8-81.2-25.6-110.5h-.5c-1.1 14.3-2.4 17.4-25.6 110.5-1.3 5.3-6.1 9.1-11.6 9.1H117c-5.6 0-10.5-3.9-11.7-9.4l-37.8-168c-1.7-7.5 4-14.6 11.7-14.6h24.5c5.7 0 10.7 4 11.8 9.7 15.6 78 20.1 109.5 21 122.2 1.6-10.2 7.3-32.7 29.4-122.7 1.3-5.4 6.1-9.1 11.7-9.1h29.1c5.6 0 10.4 3.8 11.7 9.2 24 100.4 28.8 124 29.6 129.4-.2-11.2-2.6-17.8 21.6-129.2 1-5.6 5.9-9.5 11.5-9.5zM160 72.1c0-4.1 4.1-8.1 8.1-8.1h55.8c4.1 0 8.1 4.1 8.1 8.1s-4.1 8.1-8.1 8.1h-55.8c-4.1 0-8.1-4.1-8.1-8.1zM376 160h-80v-32c0-17.7 14.3-32 32-32h48c17.7 0 32 14.3 32 32v32z"/></svg>');
+}
+
+.icon.excel {
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path fill="%232c3e50" d="M224 136V0H24C10.7 0 0 10.7 0 24v464c0 13.3 10.7 24 24 24h336c13.3 0 24-10.7 24-24V160H248c-13.2 0-24-10.8-24-24zm-96 144c0 4.4 3.6 8 8 8h56v56c0 4.4 3.6 8 8 8h48c4.4 0 8-3.6 8-8v-56h56c4.4 0 8-3.6 8-8v-48c0-4.4-3.6-8-8-8h-56v-56c0-4.4-3.6-8-8-8h-48c-4.4 0-8 3.6-8 8v56h-56c-4.4 0-8 3.6-8 8v48zm170.3 136.5c-1.6-1.7-4-2.5-6.3-2.5h-226c-2.3 0-4.7.9-6.3 2.5-1.6 1.7-2.4 4-2.3 6.4.1 2.3 1.1 4.5 2.8 6l113 113c3.1 3.1 8.2 3.1 11.3 0l113-113c1.7-1.5 2.7-3.7 2.8-6 .1-2.4-.7-4.7-2.3-6.4zM376 160h-80v-32c0-17.7 14.3-32 32-32h48c17.7 0 32 14.3 32 32v32z"/></svg>');
+}
+
+.icon.powerpoint {
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path fill="%232c3e50" d="M224 136V0H24C10.7 0 0 10.7 0 24v464c0 13.3 10.7 24 24 24h336c13.3 0 24-10.7 24-24V160H248c-13.2 0-24-10.8-24-24zm64 236c0 6.6-5.4 12-12 12H108c-6.6 0-12-5.4-12-12v-8c0-6.6 5.4-12 12-12h168c6.6 0 12 5.4 12 12v8zm0-64c0 6.6-5.4 12-12 12H108c-6.6 0-12-5.4-12-12v-8c0-6.6 5.4-12 12-12h168c6.6 0 12 5.4 12 12v8zm0-72v8c0 6.6-5.4 12-12 12H108c-6.6 0-12-5.4-12-12v-8c0-6.6 5.4-12 12-12h168c6.6 0 12 5.4 12 12zm96-114.1v6.1H256V0h6.1c6.4 0 12.5 2.5 17 7l97.9 98c4.5 4.5 7 10.6 7 16.9z"/></svg>');
+}
+
+.file-area {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  border: 2px dashed #ddd;
+  border-radius: 8px;
+  padding: 15px;
+  transition: border-color 0.3s;
+}
+
+.file-area:hover {
+  border-color: var(--primary);
+}
+
+.file-label {
+  background: var(--primary);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.file-label:hover {
+  background: #2980b9;
+}
+
+input[type="file"] {
+  display: none;
+}
+
+.file-name {
+  margin-left: 15px;
+  color: #666;
+  font-size: 0.95rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 180px;
+}
+
+.convert-btn {
+  background: var(--primary);
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  width: 100%;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.convert-btn:hover {
+  background: #2980b9;
+  transform: translateY(-2px);
+}
+
+.convert-btn:active {
+  transform: translateY(0);
+}
+
+.status {
+  margin-top: 15px;
+  padding: 12px;
+  border-radius: 5px;
+  text-align: center;
+  font-weight: 500;
+  transition: all 0.3s;
+}
+
+.status.success {
+  background: rgba(46, 204, 113, 0.1);
+  color: var(--success);
+}
+
+.status.error {
+  background: rgba(231, 76, 60, 0.1);
+  color: var(--danger);
+}
+
+.status.processing {
+  background: rgba(52, 152, 219, 0.1);
+  color: var(--primary);
+}
+
+.instructions {
+  background: #f9f9f9;
+  padding: 25px;
+  margin: 20px;
+  border-radius: 10px;
+  border-left: 5px solid var(--primary);
+}
+
+.instructions h3 {
+  margin-bottom: 15px;
+  color: var(--dark);
+}
+
+.instructions ol {
+  padding-left: 25px;
+  margin-bottom: 20px;
+}
+
+.instructions li {
+  margin-bottom: 10px;
+}
+
+.requirements {
+  background: #fff8e6;
+  padding: 15px;
+  border-radius: 8px;
+  border-left: 3px solid var(--warning);
+}
+
+.requirements h4 {
+  margin-bottom: 10px;
+  color: var(--dark);
+}
+
+.requirements p {
+  margin-bottom: 8px;
+}
+
+.requirements a {
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.requirements a:hover {
+  text-decoration: underline;
+}
+
+.requirements code {
+  background: #f0f0f0;
+  padding: 3px 6px;
+  border-radius: 4px;
+  font-family: monospace;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  background: var(--dark);
+  color: white;
+  font-size: 0.9rem;
+  margin-top: 30px;
+}
+
+@media (max-width: 768px) {
+  .converter-section {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .converter {
+    width: 100%;
+    max-width: 400px;
+  }
+}
